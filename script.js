@@ -75,7 +75,7 @@ function setNav() {
 
 }
 
-
+//This is the click event handler.
 function showNewData(e) {
 
 	//$("#year_1980").click();
