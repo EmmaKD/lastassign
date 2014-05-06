@@ -55,18 +55,30 @@ function googleLoaded(e) {
 
 	console.log("googleLoaded");
 	
+	
+	setNav();
+	
 	var myURL = History.getState().cleanUrl;
 	
-	var myYear = myURL.split("?year=")[1];
+	var myYear = myURL.split("?year=");
+	var thisYear= "1998";
+	
+	if (myYear.length >1){
+		
+		thisYear = myYear[1];
+	}
 
+	console.log("in year")
 	console.log(myYear);
 
 	//Instead of loading data from a static json file,
 	//I'm going to load it from a Google Fusion Table
 
-	$.get(myTableURL + "'1980-01-01'+" + myKey, dataLoaded, "json");
+	$("#date_"+thisYear).click();
 
-	setNav();
+	//$.get(myTableURL + "'1980-01-01'+" + myKey, dataLoaded, "json");
+
+	
 }
 
 function setNav() {
